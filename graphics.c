@@ -7,19 +7,17 @@
 
 char canvas[ROWS][COLS];
 
-/* Initialize canvas */
 void initializeCanvas()
 {
     for(int i=0;i<ROWS;i++)
     {
         for(int j=0;j<COLS;j++)
         {
-            canvas[i][j] = '_';
+            canvas[i][j]='_';
         }
     }
-}
+ }
 
-/* Display canvas */
 void displayCanvas()
 {
     printf("\n");
@@ -34,7 +32,6 @@ void displayCanvas()
     }
 }
 
-/* Draw Rectangle */
 void drawRectangle(int x, int y, int width, int height)
 {
     for(int i=y;i<y+height;i++)
@@ -49,7 +46,7 @@ void drawRectangle(int x, int y, int width, int height)
     }
 }
 
-/* Draw Line using DDA */
+
 void drawLine(int x1, int y1, int x2, int y2)
 {
     int dx = abs(x2 - x1);
@@ -87,7 +84,7 @@ void drawLine(int x1, int y1, int x2, int y2)
     }
 }
 
-/* Draw Triangle */
+
 void drawTriangle(int x,int y,int height)
 {
     for(int i=0;i<height;i++)
@@ -104,7 +101,7 @@ void drawTriangle(int x,int y,int height)
     }
 }
 
-/* Draw Circle */
+
 void drawCircle(int xc,int yc,int r)
 {
     for(int y=0;y<ROWS;y++)
@@ -122,7 +119,7 @@ void drawCircle(int xc,int yc,int r)
     }
 }
 
-/* Delete Area */
+
 void deleteArea(int x,int y,int width,int height)
 {
     for(int i=y;i<y+height;i++)
@@ -151,7 +148,8 @@ int main()
         printf("3. Draw Triangle\n");
         printf("4. Draw Circle\n");
         printf("5. Delete Area\n");
-        printf("6. Exit\n");
+        printf("6. Modify Rectangle\n");
+        printf("7. Exit\n");
 
         printf("Enter Choice: ");
         scanf("%d",&choice);
@@ -240,8 +238,26 @@ int main()
 
             case 6:
             {
-                printf("Exiting Program...\n");
+               initializeCanvas();
+
+               int x,y,w,h;
+
+               printf("Enter New X Y Width Height: ");
+               scanf("%d%d%d%d",&x,&y,&w,&h);
+
+               drawRectangle(x,y,w,h);
+
+               printf("\nModified Rectangle:\n");
+               displayCanvas();
+               break;
+            }
+
+
+            case 7:
+            {
+                printf("Exiting Program....\n");
                 return 0;
+
             }
 
             default:
