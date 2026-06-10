@@ -1,0 +1,49 @@
+Prompt 1:
+Write a 2D graphics editor in C using * and _.
+It should draw a rectangle, line, triangle, and circle.
+Use a 2D character array to store the picture.
+
+Response:
+Provided C code implementing rectangle, line, triangle, and circle drawing using a 2D character array.
+
+Prompt 2:
+Give sample inputs and outputs for all shapes.
+
+Response:
+Provided sample inputs and outputs for rectangle, line, triangle, and circle.
+
+Prompt 3:
+The line is not appearing straight. How can I improve it?
+
+Response:
+Suggested replacing the DDA line algorithm with Bresenham's Line Drawing Algorithm and provided code.
+
+Prompt 4:
+Check whether my code satisfies all project requirements.
+
+Response:
+Reviewed the code and identified that modify functionality was missing. Suggested adding a Modify Rectangle option.
+
+Prompt 5:
+What additional features can I add?
+
+Response:
+Suggested features such as Save Canvas to File, Clear Canvas, Multiple Shapes on Same Canvas, Move Shape, Undo/Redo, etc.
+
+Prompt 6:
+How do I implement Save Canvas to File?
+
+Response:
+Provided saveCanvasToFile() function and menu modifications.
+
+Prompt 7:
+How do I implement Clear Canvas?
+
+Response:
+Provided Clear Canvas menu option and corresponding switch-case code.
+
+Prompt 8:
+How do I compile, run, and push the project to GitHub?
+
+Response:
+Provided gcc compile command, execution command, and Git commands (git add, git commit, git push).
