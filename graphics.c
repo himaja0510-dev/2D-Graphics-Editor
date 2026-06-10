@@ -172,7 +172,8 @@ int main()
         printf("5. Delete Area\n");
         printf("6. Modify Rectangle\n");
         printf("7. Save Canvas\n");
-printf("8. Exit\n");
+        printf("8. Clear Canvas\n");
+        printf("9. Exit\n");  
 
         printf("Enter Choice: ");
         scanf("%d",&choice);
@@ -282,9 +283,18 @@ case 7:
 
             case 8:
             {
+                initializeCanvas();
+
+            printf("\nCanvas Cleared!\n");
+            displayCanvas();
+            break;
+
+            }
+
+            case 9:
+            {
                 printf("Exiting Program....\n");
                 return 0;
-
             }
 
             default:
