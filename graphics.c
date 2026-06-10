@@ -134,7 +134,29 @@ void deleteArea(int x,int y,int width,int height)
         }
     }
 }
+void saveCanvasToFile()
+{
+    FILE *fp = fopen("drawing.txt", "w");
 
+    if(fp == NULL)
+    {
+        printf("Error creating file!\n");
+        return;
+    }
+
+    for(int i=0;i<ROWS;i++)
+    {
+        for(int j=0;j<COLS;j++)
+        {
+            fprintf(fp,"%c",canvas[i][j]);
+        }
+        fprintf(fp,"\n");
+    }
+
+    fclose(fp);
+
+    printf("Canvas saved to drawing.txt\n");
+}
 int main()
 {
     int choice;
@@ -149,7 +171,8 @@ int main()
         printf("4. Draw Circle\n");
         printf("5. Delete Area\n");
         printf("6. Modify Rectangle\n");
-        printf("7. Exit\n");
+        printf("7. Save Canvas\n");
+printf("8. Exit\n");
 
         printf("Enter Choice: ");
         scanf("%d",&choice);
@@ -251,9 +274,13 @@ int main()
                displayCanvas();
                break;
             }
+case 7:
+{
+    saveCanvasToFile();
+    break;
+}
 
-
-            case 7:
+            case 8:
             {
                 printf("Exiting Program....\n");
                 return 0;
